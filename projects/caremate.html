@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareMate Project - Details</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="project-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Hari Manivannan</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Hari Manivannan</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="../index.html#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="../index.html#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="../index.html#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="../index.html#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <section class="project-details">
+        <h1 data-aos="fade-down">CareMate</h1>
+        <div class="project-stats" data-aos="fade-up">
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-chart-line"></i>
+                <div class="stat-number">95%</div>
+                <div class="stat-label">User Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-code-branch"></i>
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Features</div>
+            </div>
+        </div>
+        <div class="project-content">
+            <img 
+                src="../assets/project-1.png" 
+                alt="CareMate Project" 
+                class="project-detail-img"
+                data-aos="fade-right"
+            >
+            <div class="project-description" data-aos="fade-left">
+                <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                <p>CareMate is a comprehensive healthcare management system designed to streamline patient care and medical record management. Built with modern web technologies, it provides an intuitive interface for both healthcare providers and patients.</p>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag"><i class="fab fa-react"></i> React.js</span>
+                    <span class="tech-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                    <span class="tech-tag"><i class="fas fa-server"></i> Express</span>
+                    <span class="tech-tag"><i class="fas fa-database"></i> MongoDB</span>
+                    <span class="tech-tag"><i class="fas fa-lock"></i> JWT</span>
+                    <span class="tech-tag"><i class="fas fa-network-wired"></i> Socket.io</span>
+                </div>
+
+                <h2><i class="fas fa-star"></i> Key Features</h2>
+                <ul class="features-grid">
+                    <li>
+                        <i class="fas fa-user-md"></i>
+                        <div>
+                            <h3>Patient Management</h3>
+                            <p>Comprehensive patient record management with detailed medical history</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar-check"></i>
+                        <div>
+                            <h3>Smart Scheduling</h3>
+                            <p>Intelligent appointment scheduling with conflict resolution</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-history"></i>
+                        <div>
+                            <h3>Medical History</h3>
+                            <p>Detailed tracking of patient medical history and treatments</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-prescription"></i>
+                        <div>
+                            <h3>Prescription System</h3>
+                            <p>Digital prescription management with drug interaction checks</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-bell"></i>
+                        <div>
+                            <h3>Smart Alerts</h3>
+                            <p>Automated reminders for medications and appointments</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-bar"></i>
+                        <div>
+                            <h3>Analytics Dashboard</h3>
+                            <p>Comprehensive health analytics and reporting system</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2><i class="fas fa-code"></i> Technical Highlights</h2>
+                <ul class="tech-highlights">
+                    <li>
+                        <i class="fas fa-shield-alt"></i>
+                        <span>End-to-end encryption for data security</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Optimized database queries for fast performance</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-cubes"></i>
+                        <span>Microservices architecture for scalability</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>HIPAA compliant infrastructure</span>
+                    </li>
+                </ul>
+
+                <div class="project-links">
+                    <a href="https://github.com/ItsHariii/CareMate" class="btn" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="#" class="btn btn-demo">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright &#169; 2024 Hari Manivannan. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector(".menu-links");
+            const icon = document.querySelector(".hamburger-icon");
+            menu.classList.toggle("open");
+            icon.classList.toggle("open");
+        }
+        
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multithreaded Webcrawler - Details</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="project-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        :root {
+            --primary-color: #15354d;    /* Deep navy blue */
+            --accent-color: #1e88e5;     /* Bright blue */
+            --background-light: #f8fafc; /* Very light blue-gray */
+            --text-dark: #1a202c;       /* Dark gray-blue */
+            --text-light: #ffffff;       /* White */
+            --border-light: #e2e8f0;    /* Light gray with blue tint */
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        body::before {
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(21, 53, 77, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(30, 136, 229, 0.1) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2315354d' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(21, 53, 77, 0.2);
+            box-shadow: 0 4px 6px rgba(21, 53, 77, 0.1);
+        }
+
+        .stat-item:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 12px rgba(21, 53, 77, 0.15);
+        }
+
+        .features-grid li {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(21, 53, 77, 0.2);
+            box-shadow: 0 4px 6px rgba(21, 53, 77, 0.1);
+        }
+
+        .features-grid li:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 12px rgba(21, 53, 77, 0.15);
+        }
+
+        .tech-highlights li {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(21, 53, 77, 0.2);
+            box-shadow: 0 4px 6px rgba(21, 53, 77, 0.1);
+        }
+
+        .tech-highlights li:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 12px rgba(21, 53, 77, 0.15);
+        }
+
+        .tech-tag {
+            background: rgba(21, 53, 77, 0.9);
+            box-shadow: 0 2px 4px rgba(21, 53, 77, 0.2);
+        }
+
+        .tech-tag:hover {
+            background: var(--accent-color);
+            box-shadow: 0 4px 8px rgba(30, 136, 229, 0.2);
+        }
+
+        .project-links .btn {
+            background: var(--primary-color);
+            box-shadow: 0 4px 6px rgba(21, 53, 77, 0.2);
+        }
+
+        .project-links .btn:hover {
+            background: var(--accent-color);
+            box-shadow: 0 6px 12px rgba(30, 136, 229, 0.2);
+        }
+
+        .project-links .btn-demo {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: 0 4px 6px rgba(21, 53, 77, 0.1);
+        }
+
+        .project-links .btn-demo:hover {
+            background: var(--primary-color);
+            color: var(--text-light);
+            box-shadow: 0 6px 12px rgba(21, 53, 77, 0.2);
+        }
+
+        #desktop-nav, #hamburger-nav {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(21, 53, 77, 0.2);
+            box-shadow: 0 4px 6px rgba(21, 53, 77, 0.1);
+        }
+
+        .menu-links {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(21, 53, 77, 0.2);
+            box-shadow: 0 4px 6px rgba(21, 53, 77, 0.1);
+        }
+
+        .nav-links li a {
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--accent-color);
+        }
+
+        .menu-links li a {
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .menu-links li a:hover {
+            color: var(--accent-color);
+        }
+
+        .hamburger-icon span {
+            background-color: var(--primary-color);
+        }
+
+        .logo {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Hari Manivannan</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div class="logo">Hari Manivannan</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="../index.html#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="../index.html#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="../index.html#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="../index.html#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <section class="project-details">
+        <h1 data-aos="fade-down">Multithreaded Webcrawler</h1>
+        <div class="project-stats" data-aos="fade-up">
+            <div class="stat-item">
+                <i class="fas fa-spider"></i>
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Pages Crawled/min</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-clock"></i>
+                <div class="stat-number">5x</div>
+                <div class="stat-label">Faster than Single-thread</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-code-branch"></i>
+                <div class="stat-number">99%</div>
+                <div class="stat-label">Test Coverage</div>
+            </div>
+        </div>
+        <div class="project-content">
+            <img 
+                src="../assets/project-2.png" 
+                alt="Webcrawler Project" 
+                class="project-detail-img"
+                data-aos="fade-right"
+            >
+            <div class="project-description" data-aos="fade-left">
+                <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                <p>A high-performance web crawler that leverages multithreading to efficiently crawl and analyze web pages. Built with modern Java technologies, it provides robust URL parsing, content extraction, and data analysis capabilities.</p>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag"><i class="fab fa-java"></i> Java</span>
+                    <span class="tech-tag"><i class="fas fa-network-wired"></i> JSoup</span>
+                    <span class="tech-tag"><i class="fas fa-project-diagram"></i> ExecutorService</span>
+                    <span class="tech-tag"><i class="fas fa-database"></i> SQLite</span>
+                    <span class="tech-tag"><i class="fas fa-tasks"></i> JUnit</span>
+                    <span class="tech-tag"><i class="fas fa-code-branch"></i> Maven</span>
+                </div>
+
+                <h2><i class="fas fa-star"></i> Key Features</h2>
+                <ul class="features-grid">
+                    <li>
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <h3>Parallel Processing</h3>
+                            <p>Concurrent crawling with optimized thread pool management</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-filter"></i>
+                        <div>
+                            <h3>Smart Filtering</h3>
+                            <p>Advanced URL filtering and duplicate detection</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-database"></i>
+                        <div>
+                            <h3>Data Storage</h3>
+                            <p>Efficient storage and indexing of crawled content</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-line"></i>
+                        <div>
+                            <h3>Performance Metrics</h3>
+                            <p>Real-time crawling statistics and monitoring</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-robot"></i>
+                        <div>
+                            <h3>Robots.txt Support</h3>
+                            <p>Respectful crawling with robots.txt compliance</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h3>Error Handling</h3>
+                            <p>Robust error recovery and retry mechanisms</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2><i class="fas fa-code"></i> Technical Highlights</h2>
+                <ul class="tech-highlights">
+                    <li>
+                        <i class="fas fa-sync"></i>
+                        <span>Thread synchronization with minimal locking</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-memory"></i>
+                        <span>Optimized memory management</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Configurable crawling speed and depth</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Comprehensive test suite</span>
+                    </li>
+                </ul>
+
+                <div class="project-links">
+                    <a href="https://github.com/ItsHariii/Multithreaded-Webcrawler" class="btn" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="#" class="btn btn-demo">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright &#169; 2024 Hari Manivannan. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector(".menu-links");
+            const icon = document.querySelector(".hamburger-icon");
+            menu.classList.toggle("open");
+            icon.classList.toggle("open");
+        }
+        
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
