@@ -502,15 +502,54 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
 }
 
 .about-containers {
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
   margin: 2rem 0;
-  width: 100%;
-  justify-content: center;
+}
+
+.details-container {
+  padding: 2rem;
+  flex: 1;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+}
+
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.article-container article {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 600px) {
+  .article-container {
+    grid-template-columns: 1fr;
+  }
+
+  .article-container article {
+    justify-content: center;
+  }
+
+  .experience-sub-title {
+    text-align: center;
+  }
+
+  .details-container {
+    padding: 1.5rem;
+  }
 }
 
 /* Skill Cards */
@@ -538,6 +577,13 @@ section {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 1rem;
+}
+
+.article-container article {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-start;
 }
 
 article {
@@ -603,6 +649,20 @@ article p[title="Basic"] {
 .skill-icon:hover {
   transform: scale(1.2);
   color: rgb(53, 53, 53);
+}
+
+@media screen and (max-width: 600px) {
+  .article-container {
+    grid-template-columns: 1fr;
+  }
+
+  .article-container article {
+    justify-content: center;
+  }
+
+  .experience-sub-title {
+    text-align: center;
+  }
 }
 
 /* PROJECTS SECTION */
