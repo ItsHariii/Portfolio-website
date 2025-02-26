@@ -15,7 +15,7 @@
       <div class="loader"></div>
     </div>
     <div id="progress-bar"></div>
-    <nav id="desktop-nav" class="animate__animated animate__fadeInDown">
+    <nav id="desktop-nav">
       <div class="logo">Hari Manivannan</div>
       <div>
         <ul class="nav-links">
@@ -43,10 +43,10 @@
       </div>
     </nav>
     <section id="profile">
-      <div class="section__pic-container animate__animated animate__fadeInLeft">
+      <div id="profile-pic" class="section__pic-container">
         <img src="./assets/profile-pic.png" alt="Hari Manivannan profile picture" />
       </div>
-      <div class="section__text animate__animated animate__fadeInRight">
+      <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Hari Manivannan</h1>
         <div class="btn-container">
@@ -77,10 +77,10 @@
       </div>
     </section>
     <section id="about">
-      <p class="section__text__p1 animate__animated animate__fadeInUp">Get To Know More</p>
-      <h1 class="title animate__animated animate__fadeInUp animate__delay-1s">About Me</h1>
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
       <div class="section-container">
-        <div class="section__pic-container animate__animated animate__fadeInLeft animate__delay-1s">
+        <div class="section__pic-container">
           <img
             src="./assets/about-pic.png"
             alt="Profile picture"
@@ -126,8 +126,8 @@
       />
     </section>
     <section id="experience">
-      <p class="section__text__p1 animate__animated animate__fadeInUp">Explore My</p>
-      <h1 class="title animate__animated animate__fadeInUp animate__delay-1s">Skills</h1>
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Skills</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
@@ -137,20 +137,20 @@
                 <i class="fab fa-python skill-icon"></i>
                 <div>
                   <h3>Python</h3>
-                  <p title="Intermediate">Intermediate</p>
+                  <p title="Expert">Expert</p>
                 </div>
               </article>
               <article>
                 <i class="fas fa-database skill-icon"></i>
                 <div>
                   <h3>SQL</h3>
-                  <p title="Basic">Basic</p>
+                  <p title="Intermediate">Intermediate</p>
                 </div>
               </article>
               <article>
-                <i class="fab fa-html5 skill-icon"></i>
+                <i class="fab fa-js skill-icon"></i>
                 <div>
-                  <h3>HTML</h3>
+                  <h3>JavaScript</h3>
                   <p title="Intermediate">Intermediate</p>
                 </div>
               </article>
@@ -169,42 +169,35 @@
                 </div>
               </article>
               <article>
-                <i class="fas fa-code skill-icon"></i>
+                <i class="fab fa-html5 skill-icon"></i>
                 <div>
-                  <h3>C</h3>
-                  <p title="Basic">Basic</p>
+                  <h3>HTML/CSS</h3>
+                  <p title="Intermediate">Intermediate</p>
                 </div>
               </article>
             </div>
           </div>
           <div class="details-container">
-            <h2 class="experience-sub-title">Tools</h2>
+            <h2 class="experience-sub-title">Tools & Frameworks</h2>
             <div class="article-container">
               <article>
-                <i class="fab fa-android skill-icon"></i>
+                <i class="fab fa-react skill-icon"></i>
                 <div>
-                  <h3>Android Studio</h3>
+                  <h3>React.js</h3>
+                  <p title="Intermediate">Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <i class="fab fa-google skill-icon"></i>
+                <div>
+                  <h3>Google Cloud</h3>
                   <p title="Basic">Basic</p>
                 </div>
               </article>
               <article>
-                <i class="fab fa-microsoft skill-icon"></i>
+                <i class="fab fa-github skill-icon"></i>
                 <div>
-                  <h3>Microsoft Tools</h3>
-                  <p title="Expert">Expert</p>
-                </div>
-              </article>
-              <article>
-                <i class="fas fa-palette skill-icon"></i>
-                <div>
-                  <h3>Canva</h3>
-                  <p title="Expert">Expert</p>
-                </div>
-              </article>
-              <article>
-                <i class="fab fa-git-alt skill-icon"></i>
-                <div>
-                  <h3>Git</h3>
+                  <h3>GitHub</h3>
                   <p title="Intermediate">Intermediate</p>
                 </div>
               </article>
@@ -212,14 +205,115 @@
                 <i class="fas fa-code skill-icon"></i>
                 <div>
                   <h3>VS Code</h3>
+                  <p title="Expert">Expert</p>
+                </div>
+              </article>
+              <article>
+                <i class="fas fa-database skill-icon"></i>
+                <div>
+                  <h3>DBeaver</h3>
                   <p title="Intermediate">Intermediate</p>
                 </div>
               </article>
               <article>
-                <i class="fab fa-figma skill-icon"></i>
+                <i class="fas fa-terminal skill-icon"></i>
                 <div>
-                  <h3>Figma</h3>
+                  <h3>PowerShell</h3>
+                  <p title="Intermediate">Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">AI/ML & Data Science</h2>
+            <div class="article-container">
+              <article>
+                <i class="fas fa-brain skill-icon"></i>
+                <div>
+                  <h3>PyTorch</h3>
                   <p title="Basic">Basic</p>
+                </div>
+              </article>
+              <article>
+                <i class="fas fa-robot skill-icon"></i>
+                <div>
+                  <h3>EfficientNet</h3>
+                  <p title="Basic">Basic</p>
+                </div>
+              </article>
+              <article>
+                <i class="fas fa-chart-bar skill-icon"></i>
+                <div>
+                  <h3>Pandas</h3>
+                  <p title="Intermediate">Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <i class="fas fa-infinity skill-icon"></i>
+                <div>
+                  <h3>NumPy</h3>
+                  <p title="Intermediate">Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <i class="fas fa-chart-line skill-icon"></i>
+                <div>
+                  <h3>Scikit-Learn</h3>
+                  <p title="Basic">Basic</p>
+                </div>
+              </article>
+              <article>
+                <i class="fas fa-cloud skill-icon"></i>
+                <div>
+                  <h3>Google Gen AI</h3>
+                  <p title="Intermediate">Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Web & App Development</h2>
+            <div class="article-container">
+              <article>
+                <i class="fab fa-react skill-icon"></i>
+                <div>
+                  <h3>React Native</h3>
+                  <p title="Basic">Basic</p>
+                </div>
+              </article>
+              <article>
+                <i class="fab fa-css3 skill-icon"></i>
+                <div>
+                  <h3>Tailwind CSS</h3>
+                  <p title="Basic">Basic</p>
+                </div>
+              </article>
+              <article>
+                <i class="fas fa-server skill-icon"></i>
+                <div>
+                  <h3>FastAPI</h3>
+                  <p title="Intermediate">Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <i class="fab fa-google skill-icon"></i>
+                <div>
+                  <h3>Firebase</h3>
+                  <p title="Basic">Basic</p>
+                </div>
+              </article>
+              <article>
+                <i class="fas fa-cogs skill-icon"></i>
+                <div>
+                  <h3>API Integration</h3>
+                  <p title="Intermediate">Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <i class="fas fa-code-branch skill-icon"></i>
+                <div>
+                  <h3>REST APIs</h3>
+                  <p title="Intermediate">Intermediate</p>
                 </div>
               </article>
             </div>
@@ -240,48 +334,24 @@
         <div class="project-container color-container">
           <div class="project-pic">
             <img
-              src="./assets/project-1.png"
-              alt="CareMate Project"
+              src="./assets/project-4.png"
+              alt="Cervico Project"
               class="project-img"
             />
           </div>
-          <h2 class="project-title">CareMate</h2>
+          <h2 class="project-title">Cervico</h2>
           <div class="btn-container">
             <button
               class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/ItsHariii/CareMate'"
+              onclick="location.href='https://github.com/ItsHariii/Cervico'"
             >
               GitHub
             </button>
             <button
               class="btn btn-color-2 project-btn"
-              onclick="location.href='./projects/caremate.html'"
+              onclick="location.href='./coming-soon.html'"
             >
-              Learn More
-            </button>
-          </div>
-        </div>
-        <div class="project-container color-container">
-          <div class="project-pic">
-            <img
-              src="./assets/project-2.png"
-              alt="Web Crawler Project"
-              class="project-img"
-            />
-          </div>
-          <h2 class="project-title">Multi-Threaded Web Crawler</h2>
-          <div class="btn-container">
-            <button
-              class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/ItsHariii/MyProjects/tree/main/Multi%20Threaded%20Webcrawler'"
-            >
-              GitHub
-            </button>
-            <button
-              class="btn btn-color-2 project-btn"
-              onclick="location.href='./projects/webcrawler.html'"
-            >
-              Learn More
+              Explore
             </button>
           </div>
         </div>
@@ -303,81 +373,57 @@
             </button>
             <button
               class="btn btn-color-2 project-btn"
-              onclick="location.href='./projects/tinytasks.html'"
+              onclick="location.href='./coming-soon.html'"
             >
-              Learn More
+              Explore
             </button>
           </div>
         </div>
         <div class="project-container color-container">
           <div class="project-pic">
             <img
-              src="./assets/project-4.png"
-              alt="Portfolio Website Project"
+              src="./assets/project-1.png"
+              alt="CareMate Project"
               class="project-img"
             />
           </div>
-          <h2 class="project-title">Portfolio Website</h2>
+          <h2 class="project-title">CareMate</h2>
           <div class="btn-container">
             <button
               class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/ItsHariii/Portfolio-website'"
+              onclick="location.href='https://github.com/ItsHariii/CareMate'"
             >
               GitHub
             </button>
             <button
               class="btn btn-color-2 project-btn"
-              onclick="location.href='./projects/portfolio.html'"
+              onclick="location.href='./coming-soon.html'"
             >
-              Learn More
+              Explore
             </button>
           </div>
         </div>
         <div class="project-container color-container">
           <div class="project-pic">
             <img
-              src="./assets/project-5.png"
-              alt="Weather App Project"
+              src="./assets/project-2.png"
+              alt="Web Crawler Project"
               class="project-img"
             />
           </div>
-          <h2 class="project-title">Weather Dashboard</h2>
+          <h2 class="project-title">Multi-Threaded Web Crawler</h2>
           <div class="btn-container">
             <button
               class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/ItsHariii/MyProjects/tree/main/Weather%20Dashboard'"
+              onclick="location.href='https://github.com/ItsHariii/MyProjects/tree/main/Multi%20Threaded%20Webcrawler'"
             >
               GitHub
             </button>
             <button
               class="btn btn-color-2 project-btn"
-              onclick="location.href='./projects/weather.html'"
+              onclick="location.href='./coming-soon.html'"
             >
-              Learn More
-            </button>
-          </div>
-        </div>
-        <div class="project-container color-container">
-          <div class="project-pic">
-            <img
-              src="./assets/project-6.png"
-              alt="Chat Application Project"
-              class="project-img"
-            />
-          </div>
-          <h2 class="project-title">Real-time Chat App</h2>
-          <div class="btn-container">
-            <button
-              class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/ItsHariii/MyProjects/tree/main/Chat%20Application'"
-            >
-              GitHub
-            </button>
-            <button
-              class="btn btn-color-2 project-btn"
-              onclick="location.href='./projects/chat.html'"
-            >
-              Learn More
+              Explore
             </button>
           </div>
         </div>
