@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSpeak - Details</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="project-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        :root {
+            --primary-color: #071e52;    /* Deep navy */
+            --accent-color: #3c9cd2;     /* Bright blue */
+            --background-light: #f5f7fa; /* Very light blue-gray */
+            --text-dark: #071e52;       /* Deep navy */
+            --text-light: #ffffff;       /* White */
+            --border-light: #64bc8b;    /* Mint green */
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #d4e6f1 100%);
+        }
+
+        body::before {
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(7, 30, 82, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(60, 156, 210, 0.1) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23071e52' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(7, 30, 82, 0.2);
+            box-shadow: 0 4px 6px rgba(7, 30, 82, 0.1);
+        }
+
+        .stat-item:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 12px rgba(60, 156, 210, 0.15);
+        }
+
+        .features-grid li {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(7, 30, 82, 0.2);
+            box-shadow: 0 4px 6px rgba(7, 30, 82, 0.1);
+        }
+
+        .features-grid li:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 12px rgba(60, 156, 210, 0.15);
+        }
+
+        .tech-highlights li {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(7, 30, 82, 0.2);
+            box-shadow: 0 4px 6px rgba(7, 30, 82, 0.1);
+        }
+
+        .tech-highlights li:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 12px rgba(60, 156, 210, 0.15);
+        }
+
+        .tech-tag {
+            background: rgba(7, 30, 82, 0.9);
+            box-shadow: 0 2px 4px rgba(7, 30, 82, 0.2);
+        }
+
+        .tech-tag:hover {
+            background: var(--accent-color);
+            box-shadow: 0 4px 8px rgba(60, 156, 210, 0.2);
+        }
+
+        .project-links .btn {
+            background: var(--primary-color);
+            box-shadow: 0 4px 6px rgba(7, 30, 82, 0.2);
+        }
+
+        .project-links .btn:hover {
+            background: var(--accent-color);
+            box-shadow: 0 6px 12px rgba(60, 156, 210, 0.2);
+        }
+
+        .project-links .btn-demo {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: 0 4px 6px rgba(7, 30, 82, 0.1);
+        }
+
+        .project-links .btn-demo:hover {
+            background: var(--primary-color);
+            color: var(--text-light);
+            box-shadow: 0 6px 12px rgba(7, 30, 82, 0.2);
+        }
+
+        #desktop-nav, #hamburger-nav {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(7, 30, 82, 0.2);
+            box-shadow: 0 4px 6px rgba(7, 30, 82, 0.1);
+        }
+
+        .menu-links {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(7, 30, 82, 0.2);
+            box-shadow: 0 4px 6px rgba(7, 30, 82, 0.1);
+        }
+
+        .nav-links li a {
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--accent-color);
+        }
+
+        .menu-links li a {
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .menu-links li a:hover {
+            color: var(--accent-color);
+        }
+
+        .hamburger-icon span {
+            background-color: var(--primary-color);
+        }
+
+        .logo {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Hari Manivannan</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div class="logo">Hari Manivannan</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="../index.html#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="../index.html#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="../index.html#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="../index.html#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <section class="project-details">
+        <h1 data-aos="fade-down">NeuroSpeak</h1>
+        <div class="project-stats" data-aos="fade-up">
+            <div class="stat-item">
+                <i class="fas fa-brain"></i>
+                <div class="stat-number">AI-Powered</div>
+                <div class="stat-label">Neural Networks</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-language"></i>
+                <div class="stat-number">Multi</div>
+                <div class="stat-label">Language Support</div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-microchip"></i>
+                <div class="stat-number">Real-time</div>
+                <div class="stat-label">Processing</div>
+            </div>
+        </div>
+        <div class="project-content">
+            <img 
+                src="../assets/project-2.png" 
+                alt="NeuroSpeak Project" 
+                class="project-detail-img"
+                data-aos="fade-right"
+            >
+            <div class="project-description" data-aos="fade-left">
+                <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                <p>NeuroSpeak is an advanced speech recognition and synthesis platform powered by neural networks. It enables natural language processing with high accuracy and low latency, making it ideal for accessibility applications, voice assistants, and multilingual communication tools.</p>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                    <span class="tech-tag"><i class="fas fa-brain"></i> PyTorch</span>
+                    <span class="tech-tag"><i class="fas fa-microphone"></i> SpeechRecognition</span>
+                    <span class="tech-tag"><i class="fas fa-volume-up"></i> pyttsx3</span>
+                    <span class="tech-tag"><i class="fas fa-language"></i> NLTK</span>
+                    <span class="tech-tag"><i class="fas fa-code-branch"></i> TensorFlow</span>
+                </div>
+
+                <h2><i class="fas fa-star"></i> Key Features</h2>
+                <ul class="features-grid">
+                    <li>
+                        <i class="fas fa-microphone-alt"></i>
+                        <div>
+                            <h3>Real-time Recognition</h3>
+                            <p>Instant speech-to-text with minimal latency</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-globe-americas"></i>
+                        <div>
+                            <h3>Multilingual Support</h3>
+                            <p>Recognition and synthesis in multiple languages</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-check"></i>
+                        <div>
+                            <h3>Speaker Identification</h3>
+                            <p>Voice biometrics for user authentication</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-volume-up"></i>
+                        <div>
+                            <h3>Natural Voice Synthesis</h3>
+                            <p>Human-like speech generation with emotion</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-comment-dots"></i>
+                        <div>
+                            <h3>Context Awareness</h3>
+                            <p>Understanding conversational context and references</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-universal-access"></i>
+                        <div>
+                            <h3>Accessibility Tools</h3>
+                            <p>Features designed for users with disabilities</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2><i class="fas fa-code"></i> Technical Highlights</h2>
+                <ul class="tech-highlights">
+                    <li>
+                        <i class="fas fa-network-wired"></i>
+                        <span>Advanced neural network architecture</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-cogs"></i>
+                        <span>Custom acoustic and language models</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Optimized for low-resource environments</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Cross-platform compatibility</span>
+                    </li>
+                </ul>
+
+                <div class="project-links">
+                    <a href="https://github.com/ItsHariii/NeuroSpeak" class="btn" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="#" class="btn btn-demo">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright &#169; 2024 Hari Manivannan. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector(".menu-links");
+            const icon = document.querySelector(".hamburger-icon");
+            menu.classList.toggle("open");
+            icon.classList.toggle("open");
+        }
+        
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
